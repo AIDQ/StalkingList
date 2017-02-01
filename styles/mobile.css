@@ -1,0 +1,59 @@
+@media screen and (max-width: 1020px) {
+	.thumb {
+		width: 32.3%;
+		margin: 5px 0.5%;
+	}
+}
+@media screen and (max-width: 830px) {
+	.search {
+		margin-left: -15px;
+		width: 45%;
+	}
+	.thumb .profile-pic .zoom-in {
+		display: block;
+		top: 65px;
+		left: 65px;
+		padding: 5px;
+	}
+	.pop-up.image {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+@media screen and (max-width: 750px) {
+	.thumb {
+		width: 48%;
+		margin: 5px 1%;
+	}
+	.recent-posts .img-container {
+		width: 98%;
+		padding-top: 98%;
+	}
+}
+@media screen and (max-width: 550px) {
+	header {
+		height: 90px;
+	}
+	.logo {
+		margin-left: 10px;
+		margin-bottom: 0;
+	}
+	.update {
+		margin: 5px 10px;
+	}
+	.search {
+		width: 90%;
+		bottom: 0;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.thumbs.container {
+		padding-top: 90px;
+	}
+}
+@media screen and (max-width: 450px) {
+	.thumb {
+		width: 97%;
+		margin: 5px 1.5%;
+	}
+}
