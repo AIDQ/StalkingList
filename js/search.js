@@ -14,19 +14,22 @@ $(function () {
 			}
 			else {
 				var anythingFound = false;
+				var fullNameMatch = false;
 				$('.thumb').filter(function () {
 					var username = $(this).data('user');
 					if (username.match(new RegExp('^' + input, 'i'))) {
 						anythingFound = true;
+						if(username === input) fullNameMatch = true;
 						return true;
 					}
 					else {
 						return false;
 					}
 				}).show();
-				if (!anythingFound) {
-					$('.user-not-found').show().html(
-						'User <b>' + input + '</b> not found.<br> <a class="add-user" href="add.php?username=' + input + '">Add ' + input + '</a>'
+				if (!fullNameMatch) {
+					var extraLine = '';
+					if(!anythingFound) extraLine = 'User <b>' + input + '</b> not found.<br>'
+					$('.user-not-found').show().html(extraLine + '<a class="add-user" href="add.php?username=' + input + '">Add ' + input + '</a>'
 					);
 				}
 				else {
