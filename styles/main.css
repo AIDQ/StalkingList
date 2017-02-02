@@ -63,6 +63,10 @@ header {
 	padding-top: 50px;
 	text-align: left;
 }
+
+.user-not-found{
+	text-align: center;
+}
 	.thumb {
 		vertical-align: top;
 		text-align: left;

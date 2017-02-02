@@ -64,5 +64,5 @@ for ($i = 0; $i < count($responses); $i++) {
 // Save json file
 file_put_contents('data/list.json', json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
-header('Location: index.php');
+header('Location: ./');
 ?>

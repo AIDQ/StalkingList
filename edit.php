@@ -5,7 +5,7 @@ $users = json_decode(file_get_contents('data/list.json'), true);
 if (isset($_GET['index'])) {
 	$index = $_GET['index'];
 
-	// Chnage username
+	// Change username
 	if (isset($_GET['new'])) {
 		$username_new = $_GET['new'];
 		// Remove non valid characters
