@@ -19,7 +19,7 @@ $(function () {
 					var username = $(this).data('user');
 					if (username.match(new RegExp('^' + input, 'i'))) {
 						anythingFound = true;
-						if(username === input) fullNameMatch = true;
+						if (username === input) fullNameMatch = true;
 						return true;
 					}
 					else {
@@ -28,15 +28,15 @@ $(function () {
 				}).show();
 				if (!fullNameMatch) {
 					var extraLine = '';
-					if(!anythingFound) extraLine = 'User <b>' + input + '</b> not found.<br>'
-					$('.user-not-found').show().html(extraLine + '<a class="add-user" href="add.php?username=' + input + '">Add ' + input + '</a>'
+					if (!anythingFound) extraLine = 'User <b>' + input + '</b> not found.<br>'
+					$('.user-not-found').show().html(
+						extraLine + '<a class="add-user" href="add.php?username=' + input + '">Add ' + input + '</a>'
 					);
 				}
 				else {
 					$('.user-not-found').hide();
 				}
 			}
-
 		}
 		else {
 			$('.thumb').show();
