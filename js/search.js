@@ -1,6 +1,9 @@
 $(function () {
+	$('.thumbs').append(
+		'<p class="add-person" style="display: none;"></p>'
+	);
+
 	var $searchBox = $('.search');
-	$('.thumbs').append('<p class="user-not-found"></p>');
 	$searchBox.focus();
 	$searchBox.keyup(function () {
 		var input = $searchBox.val().replace(/[^A-Za-z0-9._]/g, '');
@@ -9,37 +12,38 @@ $(function () {
 			$('.thumb').hide();
 			window.scrollTo(0, 0);
 
-			if (input === 'new') {
-				$('.thumb.new').show();
-			}
-			else {
-				var anythingFound = false;
-				var fullNameMatch = false;
-				$('.thumb').filter(function () {
-					var username = $(this).data('user');
-					if (username.match(new RegExp('^' + input, 'i'))) {
-						anythingFound = true;
-						if (username === input) fullNameMatch = true;
-						return true;
+			var fullNameMatch = false;
+			$('.thumb').filter(function () {
+				var username = $(this).data('user');
+				if (username.match(new RegExp('^' + input, 'i'))) {
+					if (username === input) {
+						fullNameMatch = true;
 					}
-					else {
-						return false;
-					}
-				}).show();
-				if (!fullNameMatch) {
-					var extraLine = '';
-					if (!anythingFound) extraLine = 'User <b>' + input + '</b> not found.<br>'
-					$('.user-not-found').show().html(
-						extraLine + '<a class="add-user" href="add.php?username=' + input + '">Add ' + input + '</a>'
-					);
+					return true;
 				}
 				else {
-					$('.user-not-found').hide();
+					return false;
 				}
+			}).show();
+			
+			if (input === 'new') {
+				$('.thumb.new').show();
+				fullNameMatch = true;
+			}
+			
+			if (!fullNameMatch) {
+				$('.add-person').show().html(
+					'User <b>' + input + '</b> not found.<br>' +
+					'<a href="add.php?username=' + input + '">Add <b>' + input + '</b></a>'
+				);
+			}
+			else {
+				$('.add-person').hide();
 			}
 		}
 		else {
 			$('.thumb').show();
+			$('.add-person').hide();
 		}
 	});
 });

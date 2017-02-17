@@ -39,9 +39,10 @@ function get_user($page_html) {
 // Update in users array
 for ($i = 0; $i < count($responses); $i++) {
 	$ig_user = get_user($responses[$i]);
+	$username = $users[$i]['username'];
 	$users[$i] = array(); // clear old values
 	
-	$users[$i]['username'] = $ig_user['username'];
+	$users[$i]['username'] = $username;
 	$users[$i]['name'] = $ig_user['full_name'];
 	$users[$i]['profile_pic_url'] = $ig_user['profile_pic_url'];
 	$users[$i]['biography'] = preg_replace("/[\n\r]/", "", $ig_user['biography']);

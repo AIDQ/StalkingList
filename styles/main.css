@@ -63,10 +63,6 @@ header {
 	padding-top: 50px;
 	text-align: left;
 }
-
-.user-not-found{
-	text-align: center;
-}
 	.thumb {
 		vertical-align: top;
 		text-align: left;
@@ -302,6 +298,25 @@ header {
 			}
 			.recent-posts .overlay-icon.comments::before {
 				background-position: -21px;
+			}
+
+			.add-person {
+				text-align: center;
+			}
+			.add-person > a {
+				font-family: Oswald, Arial, sans-serif;
+				font-weight: 300;
+				text-decoration: none;
+				display: inline-block;
+				margin: 10px 5px;
+				padding: 10px 30px;
+				background: #f5f8fa;
+				border: 1px solid #ddd;
+				background: #673AB7;
+				color: #fff;
+			}
+			.add-person a:hover {
+				background: #4B248E;
 			}
 
 body.no-scroll {
