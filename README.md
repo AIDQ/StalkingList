@@ -9,7 +9,7 @@
 * View full size profile pictures
 
 ## TODO
-* Add people
+* ~~Add people~~
 * Rearrange people
 * Login to preview private accounts
 * Account system
